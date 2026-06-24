@@ -1,0 +1,12 @@
+joblib
+jupyter
+matplotlib
+nbformat
+numpy
+pandas
+pyarrow
+scikit-learn
+scipy
+statsmodels
+torch
+tqdm

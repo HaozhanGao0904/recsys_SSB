@@ -1,0 +1,30 @@
+feature,type,description
+tau_t,numeric,Choice-implied selectivity threshold for session t from notebook 11a.
+belief_entropy_t,numeric,Entropy of the pre-session belief vector over level-1 categories.
+belief_max_t,numeric,Largest pre-session belief probability across categories.
+belief_top3_sum_t,numeric,Sum of the three largest pre-session category probabilities.
+belief_unknown_share_t,numeric,Belief probability on the unknown level-1 category; zero if the category is absent.
+belief_utility_mean_t,numeric,Belief-weighted mean of fixed structural utility means.
+belief_utility_std_t,numeric,Belief-implied standard deviation of utility using fixed mu and sigma.
+mu_mean_i,numeric,Mean of fixed category utility means for user i.
+mu_std_i,numeric,Standard deviation of fixed category utility means for user i.
+mu_max_i,numeric,Maximum fixed category utility mean for user i.
+mu_min_i,numeric,Minimum fixed category utility mean for user i.
+mu_top3_mean_i,numeric,Mean of the top three fixed category utility means for user i.
+sigma_mean_i,numeric,Mean fixed category utility standard deviation for user i.
+sigma_std_i,numeric,Standard deviation of fixed category utility standard deviations for user i.
+hist_ema_watchratio_t,numeric,Shifted watch-ratio EMA before the first interaction of session t.
+hist_ema_y_complete_t,numeric,Shifted completion EMA before the first interaction of session t.
+hist_ema_y_long_t,numeric,Shifted long-watch EMA before the first interaction of session t.
+hist_ema_y_rewatch_t,numeric,Shifted rewatch EMA before the first interaction of session t.
+hist_ema_y_neg_t,numeric,Shifted negative/short-watch EMA before the first interaction of session t.
+hist_cat_entropy_l2_t,numeric,Entropy of past level-2 category history before session t.
+hist_prev_sess_len_t,numeric,Length of the previous completed session before session t.
+hist_intersess_gap_h_t,numeric,Hours between previous session end and session t start.
+session_idx_within_burst,numeric,True order of session t within all structural sessions for the user-burst.
+ctx_hour_sin_t,numeric,Sine of hour-of-day at the first interaction of session t.
+ctx_hour_cos_t,numeric,Cosine of hour-of-day at the first interaction of session t.
+ctx_is_weekend_t,numeric,Weekend indicator at the first interaction of session t.
+burst_id,categorical,"Dense activity burst identifier, one-hot encoded."
+u_user_active_degree,categorical,"Platform-provided user activity segment, one-hot encoded."
+u_register_days_range,categorical,"Binned account-age segment, one-hot encoded."

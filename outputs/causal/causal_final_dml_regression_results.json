@@ -1,0 +1,20 @@
+{
+  "main_regression": "delta_tau_resid = alpha + beta_mu * D_mu + beta_sigma * D_sigma + epsilon",
+  "standard_errors": "clustered by user_id",
+  "preferred_spec": "preferred",
+  "preferred_sample": "no tau-bound transitions; D_mu and D_sigma trimmed at no-bound 1st/99th percentiles",
+  "outcome_trimming_main_result": false,
+  "trim_summary": {
+    "D_mu_1pct": -0.02110174376753266,
+    "D_mu_99pct": 0.1170824512321263,
+    "D_sigma_1pct": -0.09602536518809282,
+    "D_sigma_99pct": 0.013100231802274502,
+    "rows_all_test": 4069,
+    "rows_no_tau_bound": 4062,
+    "rows_preferred": 3918,
+    "rows_dropped_by_tau_bound": 7,
+    "rows_dropped_by_D_trim_after_no_bound": 144
+  },
+  "results_csv": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_final_dml_regression_results.csv",
+  "report_table_csv": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_final_dml_report_table.csv"
+}

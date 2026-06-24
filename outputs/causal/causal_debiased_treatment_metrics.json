@@ -1,0 +1,102 @@
+{
+  "mode": "full",
+  "run_full_treatment": true,
+  "num_test_transitions_all": 4069,
+  "num_test_transitions_this_run": 4069,
+  "num_scored_sessions": 4069,
+  "num_skipped_sessions": 0,
+  "skipped_sessions": [],
+  "avg_candidate_count": 9553.92799213566,
+  "avg_n_t": 123.38879331531089,
+  "D_mu_summary": {
+    "count": 4069.0,
+    "mean": 0.017888360330844934,
+    "std": 0.02670879768140058,
+    "min": -0.0920964890290723,
+    "1%": -0.021061719985713694,
+    "5%": -0.004733676173844406,
+    "50%": 0.009423677599433633,
+    "95%": 0.06784258819178239,
+    "99%": 0.11690850536932855,
+    "max": 0.30356934088319454
+  },
+  "D_sigma_summary": {
+    "count": 4069.0,
+    "mean": -0.013094728411364054,
+    "std": 0.021415902570348037,
+    "min": -0.19788852586960237,
+    "1%": -0.09601403718197792,
+    "5%": -0.05631758035587015,
+    "50%": -0.005596584750356071,
+    "95%": 0.00415732495330725,
+    "99%": 0.013062258539909576,
+    "max": 0.08579036741522428
+  },
+  "raw_delta_mu_summary": {
+    "count": 4069.0,
+    "mean": 0.007977079762337495,
+    "std": 0.03468128502872452,
+    "min": -0.054889687200851967,
+    "1%": -0.016971959366917738,
+    "5%": -0.0067113248908318105,
+    "50%": 0.0011233488412732973,
+    "95%": 0.0443384755490475,
+    "99%": 0.1116801437582699,
+    "max": 1.0351211019308924
+  },
+  "toy_delta_mu_summary": {
+    "count": 4069.0,
+    "mean": -0.009911280568507435,
+    "std": 0.030049316970094796,
+    "min": -0.1499775155981693,
+    "1%": -0.07578691894660211,
+    "5%": -0.046646068002995554,
+    "50%": -0.006889475235176246,
+    "95%": 0.013619576973222748,
+    "99%": 0.05531166780296358,
+    "max": 0.7835831507238842
+  },
+  "raw_delta_sigma_summary": {
+    "count": 4069.0,
+    "mean": -0.005007053531086496,
+    "std": 0.017689015253592677,
+    "min": -0.4476911660648246,
+    "1%": -0.07088951093040075,
+    "5%": -0.027235703550981726,
+    "50%": -0.000936492072146633,
+    "95%": 0.004522497219225751,
+    "99%": 0.011182611524696668,
+    "max": 0.036829573551814265
+  },
+  "toy_delta_sigma_summary": {
+    "count": 4069.0,
+    "mean": 0.008087674880277559,
+    "std": 0.01836606407564929,
+    "min": -0.24980264019522225,
+    "1%": -0.039347529879957835,
+    "5%": -0.007233703175550188,
+    "50%": 0.004045203696463773,
+    "95%": 0.03948065999982697,
+    "99%": 0.06849726515659281,
+    "max": 0.13947455424252286
+  },
+  "D_mu_D_sigma_correlation": -0.6721267826739371,
+  "loaded_from_11c": {
+    "model": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_masked_toy_mlp.pt",
+    "preprocess": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_masked_toy_mlp_preprocess.joblib",
+    "features": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_masked_toy_mlp_features.json",
+    "head_weights": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_masked_head_weights.json",
+    "masked_sessions": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_masked_test_sessions.parquet"
+  },
+  "head_weights": {
+    "w_complete": -0.08509078678863784,
+    "w_long": 0.33911838476701245,
+    "w_rewatch": 0.040260270460571825,
+    "w_neg": -0.7431163205398497
+  },
+  "exclude_previously_seen": true,
+  "output_paths": {
+    "treatment": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_debiased_treatment_transitions.parquet",
+    "metrics": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_debiased_treatment_metrics.json"
+  }
+}

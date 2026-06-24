@@ -1,0 +1,387 @@
+{
+  "random_seed": 20260628,
+  "target": "delta_tau",
+  "target_definition": "delta_tau = tau_t1 - tau_t",
+  "n_rows": 20295,
+  "n_users": 1776,
+  "split_by": "user_id",
+  "chosen_test_user_share": 0.2,
+  "test_min_transitions": 4000,
+  "split_summary": [
+    {
+      "split": "train",
+      "n_obs": 13158,
+      "n_users": 1153,
+      "target_mean": -0.004870285448850304,
+      "target_std": 4.912698663911171
+    },
+    {
+      "split": "valid",
+      "n_obs": 3068,
+      "n_users": 267,
+      "target_mean": 0.015245965822832894,
+      "target_std": 4.740992160375768
+    },
+    {
+      "split": "test",
+      "n_obs": 4069,
+      "n_users": 356,
+      "target_mean": 0.08558208004675989,
+      "target_std": 4.836284471652226
+    }
+  ],
+  "metrics": [
+    {
+      "split": "train",
+      "n_obs": 13158,
+      "n_users": 1153,
+      "target_mean": -0.004870285448850303,
+      "target_std": 4.912698663911173,
+      "pred_mean": -0.004870407345922487,
+      "pred_std": 3.39322903493475,
+      "rmse": 2.767720428856874,
+      "mae": 1.9417153799456492,
+      "r2": 0.6825778756647164,
+      "pearson": 0.839469136939995,
+      "spearman": 0.5800136478830517
+    },
+    {
+      "split": "valid",
+      "n_obs": 3068,
+      "n_users": 267,
+      "target_mean": 0.015245965822832882,
+      "target_std": 4.740992160375771,
+      "pred_mean": 0.10873572418641576,
+      "pred_std": 3.2005779308143834,
+      "rmse": 3.754082579027312,
+      "mae": 2.630700772434363,
+      "r2": 0.37279321447049685,
+      "pearson": 0.6139390523522344,
+      "spearman": 0.42920030170651413
+    },
+    {
+      "split": "test",
+      "n_obs": 4069,
+      "n_users": 356,
+      "target_mean": 0.08558208004675989,
+      "target_std": 4.836284471652226,
+      "pred_mean": -0.0028638254135864632,
+      "pred_std": 3.3989404785864417,
+      "rmse": 3.8394006815328656,
+      "mae": 2.7424448767196274,
+      "r2": 0.369609086815767,
+      "pearson": 0.6145926653626808,
+      "spearman": 0.46596281336121
+    }
+  ],
+  "target_summary": {
+    "count": 20295.0,
+    "mean": 0.016305734955345902,
+    "std": 4.871718618669756,
+    "min": -25.989527534538684,
+    "1%": -13.345539685840764,
+    "5%": -9.509213475675187,
+    "50%": 0.004760240004864746,
+    "95%": 9.610363606711944,
+    "99%": 13.65197638957064,
+    "max": 25.261312572784654
+  },
+  "feature_columns_used": [
+    "tau_t",
+    "belief_entropy_t",
+    "belief_max_t",
+    "belief_top3_sum_t",
+    "belief_unknown_share_t",
+    "belief_utility_mean_t",
+    "belief_utility_std_t",
+    "mu_mean_i",
+    "mu_std_i",
+    "mu_max_i",
+    "mu_min_i",
+    "mu_top3_mean_i",
+    "sigma_mean_i",
+    "sigma_std_i",
+    "hist_ema_watchratio_t",
+    "hist_ema_y_complete_t",
+    "hist_ema_y_long_t",
+    "hist_ema_y_rewatch_t",
+    "hist_ema_y_neg_t",
+    "hist_cat_entropy_l2_t",
+    "hist_prev_sess_len_t",
+    "hist_intersess_gap_h_t",
+    "session_idx_within_burst",
+    "ctx_hour_sin_t",
+    "ctx_hour_cos_t",
+    "ctx_is_weekend_t",
+    "burst_id",
+    "u_user_active_degree",
+    "u_register_days_range"
+  ],
+  "numeric_features": [
+    "tau_t",
+    "belief_entropy_t",
+    "belief_max_t",
+    "belief_top3_sum_t",
+    "belief_unknown_share_t",
+    "belief_utility_mean_t",
+    "belief_utility_std_t",
+    "mu_mean_i",
+    "mu_std_i",
+    "mu_max_i",
+    "mu_min_i",
+    "mu_top3_mean_i",
+    "sigma_mean_i",
+    "sigma_std_i",
+    "hist_ema_watchratio_t",
+    "hist_ema_y_complete_t",
+    "hist_ema_y_long_t",
+    "hist_ema_y_rewatch_t",
+    "hist_ema_y_neg_t",
+    "hist_cat_entropy_l2_t",
+    "hist_prev_sess_len_t",
+    "hist_intersess_gap_h_t",
+    "session_idx_within_burst",
+    "ctx_hour_sin_t",
+    "ctx_hour_cos_t",
+    "ctx_is_weekend_t"
+  ],
+  "categorical_features": [
+    "burst_id",
+    "u_user_active_degree",
+    "u_register_days_range"
+  ],
+  "dropped_features": [],
+  "intentionally_dropped_features": [
+    "hist_cat_ema_complete_t"
+  ],
+  "hist_cat_ema_complete_t_note": "Dropped because first-row category history conditions on the category of the first actually recommended video in session t.",
+  "session_order_construction": "session_idx_within_burst is computed from the full structural_sessions.parquet table before adjacent-pair filtering, grouped by user_id and burst_id.",
+  "session_order_check_share_differs_from_wrong_compressed_order": 0.6456270017245627,
+  "test_metrics": {
+    "split": "test",
+    "n_obs": 4069,
+    "n_users": 356,
+    "target_mean": 0.08558208004675989,
+    "target_std": 4.836284471652226,
+    "pred_mean": -0.0028638254135864632,
+    "pred_std": 3.3989404785864417,
+    "rmse": 3.8394006815328656,
+    "mae": 2.7424448767196274,
+    "r2": 0.369609086815767,
+    "pearson": 0.6145926653626808,
+    "spearman": 0.46596281336121
+  },
+  "feature_table": [
+    {
+      "feature": "tau_t",
+      "type": "numeric",
+      "description": "Choice-implied selectivity threshold for session t from notebook 11a."
+    },
+    {
+      "feature": "belief_entropy_t",
+      "type": "numeric",
+      "description": "Entropy of the pre-session belief vector over level-1 categories."
+    },
+    {
+      "feature": "belief_max_t",
+      "type": "numeric",
+      "description": "Largest pre-session belief probability across categories."
+    },
+    {
+      "feature": "belief_top3_sum_t",
+      "type": "numeric",
+      "description": "Sum of the three largest pre-session category probabilities."
+    },
+    {
+      "feature": "belief_unknown_share_t",
+      "type": "numeric",
+      "description": "Belief probability on the unknown level-1 category; zero if the category is absent."
+    },
+    {
+      "feature": "belief_utility_mean_t",
+      "type": "numeric",
+      "description": "Belief-weighted mean of fixed structural utility means."
+    },
+    {
+      "feature": "belief_utility_std_t",
+      "type": "numeric",
+      "description": "Belief-implied standard deviation of utility using fixed mu and sigma."
+    },
+    {
+      "feature": "mu_mean_i",
+      "type": "numeric",
+      "description": "Mean of fixed category utility means for user i."
+    },
+    {
+      "feature": "mu_std_i",
+      "type": "numeric",
+      "description": "Standard deviation of fixed category utility means for user i."
+    },
+    {
+      "feature": "mu_max_i",
+      "type": "numeric",
+      "description": "Maximum fixed category utility mean for user i."
+    },
+    {
+      "feature": "mu_min_i",
+      "type": "numeric",
+      "description": "Minimum fixed category utility mean for user i."
+    },
+    {
+      "feature": "mu_top3_mean_i",
+      "type": "numeric",
+      "description": "Mean of the top three fixed category utility means for user i."
+    },
+    {
+      "feature": "sigma_mean_i",
+      "type": "numeric",
+      "description": "Mean fixed category utility standard deviation for user i."
+    },
+    {
+      "feature": "sigma_std_i",
+      "type": "numeric",
+      "description": "Standard deviation of fixed category utility standard deviations for user i."
+    },
+    {
+      "feature": "hist_ema_watchratio_t",
+      "type": "numeric",
+      "description": "Shifted watch-ratio EMA before the first interaction of session t."
+    },
+    {
+      "feature": "hist_ema_y_complete_t",
+      "type": "numeric",
+      "description": "Shifted completion EMA before the first interaction of session t."
+    },
+    {
+      "feature": "hist_ema_y_long_t",
+      "type": "numeric",
+      "description": "Shifted long-watch EMA before the first interaction of session t."
+    },
+    {
+      "feature": "hist_ema_y_rewatch_t",
+      "type": "numeric",
+      "description": "Shifted rewatch EMA before the first interaction of session t."
+    },
+    {
+      "feature": "hist_ema_y_neg_t",
+      "type": "numeric",
+      "description": "Shifted negative/short-watch EMA before the first interaction of session t."
+    },
+    {
+      "feature": "hist_cat_entropy_l2_t",
+      "type": "numeric",
+      "description": "Entropy of past level-2 category history before session t."
+    },
+    {
+      "feature": "hist_prev_sess_len_t",
+      "type": "numeric",
+      "description": "Length of the previous completed session before session t."
+    },
+    {
+      "feature": "hist_intersess_gap_h_t",
+      "type": "numeric",
+      "description": "Hours between previous session end and session t start."
+    },
+    {
+      "feature": "session_idx_within_burst",
+      "type": "numeric",
+      "description": "True order of session t within all structural sessions for the user-burst."
+    },
+    {
+      "feature": "ctx_hour_sin_t",
+      "type": "numeric",
+      "description": "Sine of hour-of-day at the first interaction of session t."
+    },
+    {
+      "feature": "ctx_hour_cos_t",
+      "type": "numeric",
+      "description": "Cosine of hour-of-day at the first interaction of session t."
+    },
+    {
+      "feature": "ctx_is_weekend_t",
+      "type": "numeric",
+      "description": "Weekend indicator at the first interaction of session t."
+    },
+    {
+      "feature": "burst_id",
+      "type": "categorical",
+      "description": "Dense activity burst identifier, one-hot encoded."
+    },
+    {
+      "feature": "u_user_active_degree",
+      "type": "categorical",
+      "description": "Platform-provided user activity segment, one-hot encoded."
+    },
+    {
+      "feature": "u_register_days_range",
+      "type": "categorical",
+      "description": "Binned account-age segment, one-hot encoded."
+    }
+  ],
+  "best_hyperparameters": {
+    "max_iter": 300,
+    "learning_rate": 0.05,
+    "max_leaf_nodes": 31,
+    "l2_regularization": 0.01
+  },
+  "tuning_records": [
+    {
+      "max_iter": 300,
+      "learning_rate": 0.05,
+      "max_leaf_nodes": 31,
+      "l2_regularization": 0.01,
+      "valid_rmse": 3.754082579027312,
+      "valid_mae": 2.630700772434363,
+      "valid_r2": 0.37279321447049685
+    },
+    {
+      "max_iter": 800,
+      "learning_rate": 0.03,
+      "max_leaf_nodes": 31,
+      "l2_regularization": 0.05,
+      "valid_rmse": 3.7735870484698855,
+      "valid_mae": 2.6495036906182476,
+      "valid_r2": 0.3662589336233336
+    },
+    {
+      "max_iter": 500,
+      "learning_rate": 0.05,
+      "max_leaf_nodes": 63,
+      "l2_regularization": 0.05,
+      "valid_rmse": 3.784839574747697,
+      "valid_mae": 2.662277888842864,
+      "valid_r2": 0.36247377100796907
+    },
+    {
+      "max_iter": 500,
+      "learning_rate": 0.04,
+      "max_leaf_nodes": 31,
+      "l2_regularization": 0.01,
+      "valid_rmse": 3.786278980767058,
+      "valid_mae": 2.652710958053737,
+      "valid_r2": 0.3619887657283085
+    }
+  ],
+  "excluded_features_policy": [
+    "raw user_id excluded because split is by user",
+    "tau_t1 and delta_tau excluded from predictors",
+    "session lengths excluded from predictors",
+    "hist_cat_ema_complete_t excluded because it conditions on actual first recommended category in session t",
+    "session t outcomes and session t+1 features excluded",
+    "treatment variables are not constructed in this notebook"
+  ],
+  "input_paths": {
+    "transitions": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_tau_choice_transitions.parquet",
+    "tau_sessions": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_tau_choice_sessions.parquet",
+    "processed_data": "/Users/haozhangao/Desktop/RecSys Research/KuaiRec 2.0/data/processed/processed_data.parquet",
+    "structural_theta_phi": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/structural_estimates_theta_phi.npz",
+    "structural_arrays": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/structural_estimation_arrays.npz",
+    "structural_sessions": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/structural_sessions.parquet"
+  },
+  "output_paths": {
+    "predictions": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_delta_tau_predictions.parquet",
+    "metrics": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_delta_tau_prediction_metrics.json",
+    "model": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_delta_tau_predictor.joblib",
+    "feature_table": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/causal_delta_tau_feature_table.csv"
+  }
+}

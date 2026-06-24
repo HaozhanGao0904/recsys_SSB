@@ -1,0 +1,5 @@
+method,score_col,description,pearson_all_candidates,spearman_all_candidates,mean_user_pearson,median_user_pearson,mean_user_spearman,median_user_spearman
+oracle,oracle_score,rank by realized true utility u_star,1.0,1.0,1.0,1.0,1.0,1.0
+random,random_score,rank by seeded uniform random score,0.00020174984983665876,0.0002789676522717487,0.0007649029065615113,0.0006156868556392765,0.0006715030800699612,-0.0005354045354045354
+baseline_mlp,score_vanilla,notebook 10b behavior-head MLP vanilla score,0.6721551162216528,0.7082407226427717,0.19607507059475449,0.213039055919482,0.20190380583141082,0.23904225504225504
+debiased_em06_eu_mlp,EU_hat,new notebook 10c EM06 posterior-EU MLP score,0.7513010856676172,0.7761549190254505,0.41587811867635627,0.41969599041898376,0.4052047364014614,0.4290699330699331

@@ -1,0 +1,24 @@
+{
+  "n_users": 1777,
+  "n_categories": 39,
+  "n_interactions": 4325560,
+  "n_sessions": 81566,
+  "burn_in_days": 2,
+  "min_obs_per_user": 2000,
+  "score_weight_spec": "naive",
+  "score_weight_source": "manual::naive_(1,1,1,-1)",
+  "score_weights": {
+    "y_complete": 1.0,
+    "y_long": 1.0,
+    "y_rewatch": 1.0,
+    "y_neg": -1.0
+  },
+  "baseline_observed_ll": -4325944.288365455,
+  "row_id_alignment": "row_id equals the original processed_data row index and gnn_data edge row",
+  "paths": {
+    "interactions": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/structural_interactions.parquet",
+    "sessions": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/structural_sessions.parquet",
+    "arrays": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/structural_estimation_arrays.npz",
+    "baseline_posteriors": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/structural_baseline_posteriors.parquet"
+  }
+}

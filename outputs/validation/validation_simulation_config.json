@@ -1,0 +1,29 @@
+{
+  "num_users": 1777,
+  "num_videos": 10728,
+  "num_exploration_videos_per_user": 2000,
+  "num_holdout_videos_per_user": 1000,
+  "videos_per_session": 10,
+  "num_sessions": 200,
+  "prior_strength": 5.0,
+  "kappa": 0.25,
+  "random_seed": 20260623,
+  "ema_alpha": 0.1,
+  "log_wr_clip_lo": -8.0,
+  "log_wr_clip_hi": 1.935523,
+  "hist_ema_watchratio_cap": 1.682821,
+  "input_paths": {
+    "processed_data": "/Users/haozhangao/Desktop/RecSys Research/KuaiRec 2.0/data/processed/processed_data.parquet",
+    "gnn_data": "/Users/haozhangao/Desktop/RecSys Research/KuaiRec 2.0/data/processed/gnn_data.pt",
+    "true_utility": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/semi_synth_true_utility.parquet",
+    "utility_params": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/semi_synth_utility_params.npz",
+    "structural_params": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/structural_estimates_theta_phi.npz"
+  },
+  "output_paths": {
+    "exploration": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/validation_simulation/validation_exploration_interactions.parquet",
+    "holdout": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/validation_simulation/validation_holdout_candidates.parquet",
+    "config": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/validation_simulation/validation_simulation_config.json",
+    "manifest": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/validation_simulation/validation_feature_manifest.json",
+    "diagnostics": "/Users/haozhangao/Desktop/RecSys Research/python_code_new/outputs/validation_simulation/validation_simulation_diagnostics.json"
+  }
+}
