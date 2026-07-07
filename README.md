@@ -6,7 +6,8 @@ The project studies **Strategic Search Bias (SSB)** in short-video recommendatio
 
 - the utility of the current video,
 - the user's search cost,
-- the user's belief about future recommendations
+- the user's belief about future recommendations,
+- and the recommender's evolving concentration of content across categories.
 
 The repository supports the paper's main empirical components:
 
@@ -61,6 +62,39 @@ The key validation outputs are in:
 outputs/validation/
 ```
 
+### KuaiRand Random-Exposure Transfer Check
+
+The KuaiRand notebooks test the KuaiRec-trained transfer models on KuaiRand random-exposure rows. Because most KuaiRand exposure timestamps contain multiple videos, the reporting sample keeps only singleton random timestamps and drops clicked rows to approximate the one-video autoplay UI.
+
+The reported comparison ranks the cleaned random rows by three scores:
+
+- **EU:** predicted posterior expected utility.
+- **Naive heads:** `pred_p_complete + pred_p_long + pred_p_rewatch - pred_p_neg`.
+- **Completion only:** predicted completion probability.
+
+Mean observed metrics among top-ranked rows:
+
+| Top share | Metric | EU | Naive heads | Completion only |
+|---:|---|---:|---:|---:|
+| 10% | Follow | 0.000382 | 0.000000 | 0.000000 |
+| 10% | Hate | 0.000000 | 0.000000 | 0.000382 |
+| 10% | Like | 0.004589 | 0.002677 | 0.004971 |
+| 10% | Profile enter | 0.004207 | 0.002677 | 0.002294 |
+| 10% | Play time, ms | 2554.894 | 2755.459 | 2602.088 |
+| 10% | Watch ratio | 0.088724 | 0.168943 | 0.224324 |
+| 20% | Follow | 0.000382 | 0.000191 | 0.000574 |
+| 20% | Hate | 0.000000 | 0.000765 | 0.000765 |
+| 20% | Like | 0.004589 | 0.004398 | 0.004971 |
+| 20% | Profile enter | 0.004971 | 0.003250 | 0.003633 |
+| 20% | Play time, ms | 2503.642 | 2680.959 | 2505.447 |
+| 20% | Watch ratio | 0.080808 | 0.134190 | 0.179096 |
+
+The KuaiRand notebooks are in:
+
+```text
+notebooks/kuairand_random_validation/
+```
+
 ### Causal Evidence for Strategic Search Bias
 
 The causal analysis tests whether recommendation-induced changes in perceived future utility cause users to become more selective.
@@ -91,6 +125,8 @@ outputs/causal/causal_final_dml_report_table.csv
 
 ```text
 notebooks/               Ordered research notebooks, 01 through 11e
+notebooks/kuairand_random_validation/
+                         KuaiRand random-exposure transfer-validation notebooks
 src/                     Small reusable helper code
 docs/                    Supporting method notes for validation/head-weight estimation
 data/raw_metadata/       GitHub-safe KuaiRec metadata files
@@ -111,6 +147,7 @@ manifests/               File inventory and large-data notes
 | Expected utility and true utility | `07`, `08`, `09` | Compute posterior EU, estimate semi-synthetic true utility, and train an EU predictor. |
 | Recommender validation | `10a` to `10d` | Simulate validation interactions, train baseline/debiased recommenders, and evaluate ranking quality. |
 | Causal inference | `11a` to `11e` | Estimate unrestricted tau, residualize delta tau, compute debiased treatment, and run final DML regression. |
+| KuaiRand transfer check | `notebooks/kuairand_random_validation/01` to `05` | Build KuaiRand random-row features, train KuaiRec transfer models, and compare EU, naive-head, and completion-only rankers on singleton/no-click random rows. |
 
 ## Key Output Files
 
